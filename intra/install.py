@@ -24,7 +24,15 @@ def after_install():
     }
 
     if len(navbar.settings_dropdown) > 0:
-        navbar.settings_dropdown.insert(len(navbar.settings_dropdown) - 1, new_item)
+        # shift last item temporarily
+        last_item = navbar.settings_dropdown[-1]
+        navbar.settings_dropdown = navbar.settings_dropdown[:-1]
+
+        # append new record properly
+        navbar.append("settings_dropdown", new_item)
+
+        # re-append the last item
+        navbar.append("settings_dropdown", last_item.as_dict())
     else:
         navbar.append("settings_dropdown", new_item)
 
