@@ -4,8 +4,9 @@ def after_install():
     # --- Website Branding ---
     frappe.db.set_single_value("Website Settings", "app_name", "IntraERP")
     frappe.db.set_single_value("Website Settings", "app_logo", "/assets/intra/images/logo.png")
-    frappe.db.set_single_value("Website Settings", "favicon", "/assets/intra/images/favicon.png")
+    frappe.db.set_single_value("System Settings", "login_with_email_link", 0)
     
+    frappe.db.set_single_value("Website Settings", "app_name", "IntraERP")
     # --- Navbar Settings ---
     navbar = frappe.get_doc("Navbar Settings")
     navbar.navbar_logo = "/assets/intra/images/logo.png"
