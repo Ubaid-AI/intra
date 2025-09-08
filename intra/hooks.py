@@ -3,6 +3,7 @@ app_title = "Intra"
 app_publisher = "Ubaid Khanzada"
 app_description = "For Intra Customization"
 app_email = "ubaidkhanzada8@gmail.com"
+app_logo_url = "/assets/intra/images/logo.png"
 app_license = "mit"
 
 # Apps
@@ -27,6 +28,11 @@ app_license = "mit"
 # include js, css files in header of desk.html
 app_include_css = "/assets/intra/css/intra.css"
 # app_include_js = "/assets/intra/js/intra.js"
+
+website_context = {
+	"favicon": "/assets/intra/images/favicon.png",
+	"splash_image": "/assets/intra/images/splash.png",
+}
 
 # include js, css files in header of web template
 # web_include_css = "/assets/intra/css/intra.css"
@@ -83,7 +89,7 @@ app_include_css = "/assets/intra/css/intra.css"
 # ------------
 
 # before_install = "intra.install.before_install"
-# after_install = "intra.install.after_install"
+after_install = "intra.install.after_install"
 
 # Uninstallation
 # ------------
