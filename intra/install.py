@@ -39,3 +39,15 @@ def after_install():
 
     navbar.save(ignore_permissions=True)
     frappe.db.commit()
+
+    workspaces = frappe.get_all("Workspace", filters={"name": ["like", "ERPNext%"]}, fields=["name"])
+    for ws in workspaces:
+        new_name = ws.name.replace("ERPNext", "IntraERP", 1)
+        try:
+            frappe.rename_doc("Workspace", ws.name, new_name, force=True)
+        except Exception as e:
+            frappe.log_error(f"Rename failed for {ws.name}: {e}")
+
+    # clear cache so sidebar picks up new names
+    frappe.clear_cache()
+    frappe.clear_website_cache()
