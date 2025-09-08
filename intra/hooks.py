@@ -94,7 +94,7 @@ after_install = "intra.install.after_install"
 # Uninstallation
 # ------------
 
-# before_uninstall = "intra.uninstall.before_uninstall"
+before_uninstall = "intra.uninstall.before_uninstall"
 # after_uninstall = "intra.uninstall.after_uninstall"
 
 # Integration Setup
