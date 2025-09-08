@@ -50,4 +50,3 @@ def after_install():
 
     # clear cache so sidebar picks up new names
     frappe.clear_cache()
-    frappe.clear_website_cache()
